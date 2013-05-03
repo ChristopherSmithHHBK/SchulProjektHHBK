@@ -1,13 +1,11 @@
 /*
-===============================================================================
-   Autor       : Vrinssen
-   Firma       : FA13
-   Dateiname   : 4gewinnt.c
-   Datum       : 01.05.2011
-   Version     : 1.0
-   Compiler	   : Visual Studio
-   Programmschnittstelle: int starte4Gewinnt(void)
-===============================================================================
+============================================================================
+Autor		: Christopher Smith
+Klasse		: FA1
+Dateiname	: 4Gewinnt.c
+Datum		: 03.05.2013
+Beschreibung: 
+============================================================================
 */
 
 /*

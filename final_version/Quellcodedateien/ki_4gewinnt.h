@@ -1,4 +1,12 @@
-
+/*
+============================================================================
+Autor		: Christopher Smith
+Klasse		: FA1
+Dateiname	: ki_4gewinnt.h
+Datum		: 03.05.2013
+Beschreibung: 
+============================================================================
+*/
 #if !defined (KI_VIER_GEWINNT_H)
 #define KI_VIER_GEWINNT_H
  /*

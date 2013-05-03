@@ -1,10 +1,10 @@
 /*
-================================================================================
-Author		: Sebastian Weis
-Firma		: TARGO IT Consulting GmbH
-PGM			: Checkers.h
-Version		: 1.0
-Beschreibung: Das Spiel "Checkers".
+============================================================================
+Autor		: Hendrik Haase, Howik Babachanjan
+Klasse		: FA1
+Dateiname	: checkers.h
+Datum		: 03.05.2013
+Beschreibung: 
 ================================================================================
 */
 /*

@@ -1,11 +1,10 @@
 /*
 ============================================================================
-	Autor : Richard Vrinssen
-	Klasse : FA3
-	Dateiname : 4Gewinnt.h
-	Datum : 31.05.2011
-	Beschreibung: 
-	Version : 1.0
+Autor		: Christopher Smith
+Klasse		: FA1
+Dateiname	: 4Gewinnt.h
+Datum		: 03.05.2013
+Beschreibung: 
 ============================================================================
 */
 

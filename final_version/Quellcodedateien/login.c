@@ -84,7 +84,7 @@ int main(void)
 void drawTop (int iType)
 {
 	system("cls");
-	printf("\nBuild: 2\n");
+	printf("\nBuild: 4\n");
 	printf("==========================================================");
 	printf("======================");
 	switch(iType)

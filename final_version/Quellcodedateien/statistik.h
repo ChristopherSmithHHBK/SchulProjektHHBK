@@ -1,14 +1,12 @@
 /*
 ============================================================================
-	Autor		: Fabian Wunsch
-	Klasse		: FA3
-	Dateiname	: statistik.h
-	Datum		: 31.05.2011
-	Beschreibung: 
-	Version		: 1.3
+Autor		: Christopher Smith
+Klasse		: FA1
+Dateiname	: statistik.h
+Datum		: 03.05.2013
+Beschreibung: 
 ============================================================================
 */
-
 /*
 ============================================================================   
 	Praeprozessoranweisungen

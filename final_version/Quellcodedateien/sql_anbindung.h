@@ -1,4 +1,12 @@
-
+/*
+============================================================================
+Autor		: Christopher Smith
+Klasse		: FA1
+Dateiname	: sql_anbindung.h
+Datum		: 03.05.2013
+Beschreibung: 
+============================================================================
+*/
 #if !defined (SQL_ANBINDUNG_H)
 #define SQL_ANBINDUNG_H
  /*

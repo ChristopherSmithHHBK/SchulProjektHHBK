@@ -1,11 +1,10 @@
 /*
 ============================================================================
-Autor : Fabian Wunsch, Monika Klein
-Klasse : FA3
-Dateiname : Hauptmenue
-Datum : 31.05.2011
+Autor		: Christopher Smith
+Klasse		: FA1
+Dateiname	: spielmenue.h
+Datum		: 03.05.2013
 Beschreibung: 
-Version : 1.0
 ============================================================================
 */
 

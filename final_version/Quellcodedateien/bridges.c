@@ -1,11 +1,10 @@
 /*
 ============================================================================
-Autor		: Tobias Niggemann
-Klasse		: FA13
+Autor		: Yannick Jungmann, Lena Dubnova
+Klasse		: FA1
 Dateiname	: bridges.c
-Datum		: 
+Datum		: 03.05.2013
 Beschreibung: 
-Version		: 1
 ============================================================================
 */
 

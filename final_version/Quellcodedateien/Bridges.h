@@ -1,11 +1,10 @@
 /*
 ============================================================================
-Autor		: Tobias Niggemann
-Klasse		: FA13
-Dateiname	: bridges.h
-Datum		: 
-Beschreibung: header-Datei für bridges.c
-Version		: 1
+Autor		: Yannick Jungmann, Lena Dubnova
+Klasse		: FA1
+Dateiname	: Bridges.h
+Datum		: 03.05.2013
+Beschreibung: 
 ============================================================================
 */
 

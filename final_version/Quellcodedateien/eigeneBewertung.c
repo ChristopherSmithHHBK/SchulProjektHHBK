@@ -1,13 +1,11 @@
 ﻿/*
-===============================================================================
-   Autor       : Kay Schäfer
-   Firma       : HHBK
-   Dateiname   : eigeneBewertung.c
-   Datum       : 04.06.2011
-   Beschreibung: Gibt die eigene Punktebewertung der Spieler aus bzw. aller      
-                 Spieler für alle Spiele aus
-   Version     : 1.0
-===============================================================================
+============================================================================
+Autor		: Christopher Smith
+Klasse		: FA1
+Dateiname	: eigeneBewertung.h
+Datum		: 03.05.2013
+Beschreibung: 
+============================================================================
 */
 
 /*

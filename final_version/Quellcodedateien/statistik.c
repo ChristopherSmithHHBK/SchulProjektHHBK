@@ -1,13 +1,11 @@
 /*
-===============================================================================
-   Autor       : Fabian Wunsch
-   Firma       : HHBK
-   Dateiname   : statistik.c
-   Datum       : 04.06.2011
-   Beschreibung: Ausgabe der Statistik für die Benutzer, wie viele Spiele sie
-                 gewonnen oder verloren haben oder wie viele Remis sie hatten.
-   Version     : 1.0
-===============================================================================
+============================================================================
+Autor		: Christopher Smith
+Klasse		: FA1
+Dateiname	: statistik.h
+Datum		: 03.05.2013
+Beschreibung: 
+============================================================================
 */
 
 /*

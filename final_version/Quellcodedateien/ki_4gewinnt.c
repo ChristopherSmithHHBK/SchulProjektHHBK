@@ -1,15 +1,11 @@
 /*
-   ========================================================================
-   Autor       : Vrinssen
-   Firma       : HHBK
-   Dateiname   : ki_4gewinnt.c
-   Datum       : 30.05.2011
-   Version     : 1.0
-   Compiler	   : Visual Studio
-   Programmschnittstelle: int sucheComputerZug(int iSchwierigkeit,
-						  int iSpielfeld)
-                          Das Programm gibt den Wert 0 bis 6 zurueck.
-   ========================================================================
+============================================================================
+Autor		: Christopher Smith
+Klasse		: FA1
+Dateiname	: ki_4gewinnt.h
+Datum		: 03.05.2013
+Beschreibung: 
+============================================================================
 */
 #include "ki_4gewinnt.h"
 /*

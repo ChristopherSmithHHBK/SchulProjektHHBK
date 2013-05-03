@@ -1,11 +1,10 @@
 /*
 ============================================================================
-	Autor : Fabian Wunsch
-	Klasse : FA3
-	Dateiname : Reversi.h
-	Datum : 31.05.2011
-	Beschreibung: 
-	Version : 1.3
+Autor		: Christopher Smith
+Klasse		: FA1
+Dateiname	: reversi.h
+Datum		: 03.05.2013
+Beschreibung: 
 ============================================================================
 */
 

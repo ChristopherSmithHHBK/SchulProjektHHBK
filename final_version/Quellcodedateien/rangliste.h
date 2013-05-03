@@ -1,3 +1,12 @@
+/*
+============================================================================
+Autor		: Christopher Smith
+Klasse		: FA1
+Dateiname	: rangliste.h
+Datum		: 03.05.2013
+Beschreibung: 
+============================================================================
+*/
 #define _CRT_SECURE_NO_DEPRECATE 1
    /* Microsoft hat alle gängigen Ein- und Ausgabefunktionen
       als gefährlich eingestuft und durch neue Varianten ersetzt.

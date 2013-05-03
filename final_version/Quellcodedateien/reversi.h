@@ -1,6 +1,6 @@
 /*
 ============================================================================
-Autor		: Christopher Smith
+Autor		: Denis Kirchner, Daniel Bednorz
 Klasse		: FA1
 Dateiname	: reversi.h
 Datum		: 03.05.2013

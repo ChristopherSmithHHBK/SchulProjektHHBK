@@ -91,7 +91,7 @@ int main(void)
 void drawTop (int iType)
 {
 	system("cls");
-	printf("\nBuild: 18\n");
+	printf("\nBuild: 19\n");
 	printf("=========================================================");
 	printf("======================\n");
 	switch(iType)
@@ -174,22 +174,34 @@ void drawTop (int iType)
    Beschreibung:  Ersetzt Zeichen für Zeichen die eingegebenen Passwörter gegen *
 ===============================================================================
 */
-void enter_pw(char* buffer)
+int enter_pw(char* buffer)
 {
 	int iX=0;
+	int iMerker = 0;
 	char c;
 	while(iX<40)
 	{
 		c = getch();
-		if(c == '\r')
+		if(c == '\r'){
+			iMerker = 1;
 			break;
-		//if(c == '\b')
-		//	return 0;
+		}
+		if(c == '\b'){
+			iMerker = 0;
+			break;
+		}
 		buffer[iX] = c;
 		putch('*');
 		iX++;
 	}
 	buffer[iX] = 0;
+
+	if(iMerker == 0){
+		return 0;
+	}
+	else {
+		return 1;
+	}
 }
 
 /*
@@ -348,6 +360,7 @@ int registriereBenutzer(char cSpielerNeu[])
    char cPasswortNeu[SPIELERLAENGE] = "";
    char cStatement[200];
    int iGueltig = 1;
+   int iReturnValue;
    int i;
    do
    {
@@ -364,9 +377,13 @@ int registriereBenutzer(char cSpielerNeu[])
       }
 
       iGueltig = 1;
-	  printf("\n\tPasswort: ");
-	  enter_pw(cPasswortNeu);
-	  fflush(stdin);
+	  iReturnValue = 0;
+	  while(iReturnValue==0){
+		  printf("\n\tPasswort: ");
+		  cPasswortNeu[0] = 0;
+		  iReturnValue = enter_pw(cPasswortNeu);
+		  fflush(stdin);
+	  }
 
       for (i = 0; i < strlen(cPasswortNeu); i++)
       {
@@ -489,14 +506,19 @@ int pruefePasswort(char cName[SPIELERLAENGE])
    char cPasswort[SPIELERLAENGE];
    char cStatement[200];
    int iLoginVersuche;
+   int iReturnValue;
 
    // 3x falsches Passwort --> Zurück zum Login
    for (iLoginVersuche = 1; iLoginVersuche <= 3; iLoginVersuche++)
    {
-		printf("\n\tPasswort: ");
-		enter_pw(cPasswort);
-		fflush(stdin);
-	   
+	   iReturnValue = 0;
+	   while(iReturnValue == 0)
+	   {
+			printf("\n\tPasswort: ");
+			cPasswort[0] = 0;
+			iReturnValue = enter_pw(cPasswort);
+			fflush(stdin);
+	   }
       holeSQLPruefePasswortStatement(cStatement, cName, cPasswort);
 
       //Überprüfung, ob Spieler mit Passowrt vorhanden--> Select Befehl 

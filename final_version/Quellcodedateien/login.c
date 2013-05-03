@@ -84,7 +84,7 @@ int main(void)
 void drawTop (int iType)
 {
 	system("cls");
-	printf("\nBuild: 1\n");
+	printf("\nBuild: 2\n");
 	printf("==========================================================");
 	printf("======================");
 	switch(iType)
@@ -316,7 +316,7 @@ void ausgebenText(int iLogout, int iSpielerNr, int iLoginNeu,
       if (iBereitsEingeloggt)
       {
          printf("\tSie duerfen sich nicht mit dem gleichen Nicknamen,\n");
-         printf("wie den von Spieler 1 einloggen.\n");
+         printf("\twie den von Spieler 1 einloggen.\n");
          printf("\tBitte waehlen Sie einen anderen.\n");
       }
 

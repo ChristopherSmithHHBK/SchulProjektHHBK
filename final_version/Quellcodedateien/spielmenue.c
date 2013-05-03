@@ -79,6 +79,7 @@ void zeigeSpielmenu(const char cSpieltyp[12])
             starteSpiel(cSpieltyp);
             break;
          case 2:
+			if (!strcmp(g_cSpieler2, "COMPUTER"))
             waehleKI();
             break;
          case 3:

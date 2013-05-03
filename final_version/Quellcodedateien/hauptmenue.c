@@ -54,7 +54,10 @@ void hauptmenue(void)
 	  if(g_iVerbunden==1)
 		printf("\t5: Statistiken anzeigen\n");
       printf("\n");
-      printf("\t6: Logout\n");
+	  if(g_iVerbunden==1)
+	      printf("\t6: Logout\n");
+	  else
+			printf("\t6: Beenden\n");
       printf("\n");
    
 

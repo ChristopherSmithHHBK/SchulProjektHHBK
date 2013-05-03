@@ -2,7 +2,7 @@
 ============================================================================
 Autor		: Christopher Smith
 Klasse		: FA1
-Dateiname	: 4Gewinnt.c
+Dateiname	: 4Gewinnt.
 Datum		: 03.05.2013
 Beschreibung: 
 ============================================================================
@@ -77,16 +77,16 @@ float starte4Gewinnt(void)
       {
          case 0:
          case 3:
-            printf("          %s(%s), wo moechten Sie den Spielstein einwerfen?\n",
+            printf("\t%s(%s), wo moechten Sie den Spielstein einwerfen?\n",
                   cAktuellerSpieler, cSpielerfarbe);
             break;
          case 1:
-            printf("          %s(%s), Sie ", cAktuellerSpieler, cSpielerfarbe);
+            printf("\t%s(%s), Sie ", cAktuellerSpieler, cSpielerfarbe);
             printf("haben eine falsche Spalte angegeben,\n");
             printf("bitte wiederholen Sie die Eingabe.\n");
             break;
          case 2:
-            printf("          %s(%s), die ", cAktuellerSpieler, cSpielerfarbe);
+            printf("\t%s(%s), die ", cAktuellerSpieler, cSpielerfarbe);
             printf("Spalte ist voll, bitte waehlen Sie eine andere.\n");
             break;
          case 4:
@@ -96,13 +96,13 @@ float starte4Gewinnt(void)
             strcpy(cSpielerfarbe, SPIELER1_FARBE);
             aufbereitenSpielbrett(cBrett, iSpielfeld);
             ausgebenSpielbrett(cBrett);
-            printf("          Spiel neugestartet\n");
-            printf("          %s(%s), wo ", cAktuellerSpieler, cSpielerfarbe);
+            printf("\tSpiel neugestartet\n");
+            printf("\t%s(%s), wo ", cAktuellerSpieler, cSpielerfarbe);
             printf("moechten Sie den Spielstein einwerfen?\n");
             break;
          default:
-            printf("          Nicht erklaerbarer Fehler an der Stelle: ");
-            printf("          Koordinateneingabe-SetzeSpielstein!\n");
+            printf("\tNicht erklaerbarer Fehler an der Stelle: ");
+            printf("\tKoordinateneingabe-SetzeSpielstein!\n");
       }
       // Eingabe der Koordinate
       if(!strcmp(cAktuellerSpieler, "COMPUTER") == 0)
@@ -725,9 +725,7 @@ void ausgebenSpielbrett(char cBrett[SPIELBRETTHOEHE][SPIELBRETTBREITE])
    int i;
    int j;
 
-   SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),
-                           FOREGROUND_RED | FOREGROUND_GREEN |
-                           FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+   SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BACKGROUND_RED |BACKGROUND_GREEN | BACKGROUND_BLUE | BACKGROUND_INTENSITY | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
    drawTop(2);
 
    for (i = 0; i < SPIELBRETTHOEHE-1; i++)
@@ -739,28 +737,21 @@ void ausgebenSpielbrett(char cBrett[SPIELBRETTHOEHE][SPIELBRETTBREITE])
          {
             if(cBrett[i][j] == ZSPIELER1)
             {
-               SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),
-                                       FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+			   SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BACKGROUND_RED |BACKGROUND_GREEN | BACKGROUND_BLUE | BACKGROUND_INTENSITY | FOREGROUND_BLUE | FOREGROUND_GREEN| FOREGROUND_INTENSITY);
                printf("%c", cBrett[i][j]);
-               SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),
-                                       FOREGROUND_RED | FOREGROUND_GREEN |
-                                       FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+			   SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BACKGROUND_RED |BACKGROUND_GREEN | BACKGROUND_BLUE | BACKGROUND_INTENSITY | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
             }
             else
             {
                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),
                                        FOREGROUND_RED | FOREGROUND_INTENSITY);
                printf("%c", cBrett[i][j]);
-               SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),
-                                       FOREGROUND_RED | FOREGROUND_GREEN |
-                                       FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+			   SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BACKGROUND_RED |BACKGROUND_GREEN | BACKGROUND_BLUE | BACKGROUND_INTENSITY | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
             }
          }
          else
          {
-            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),
-                                    FOREGROUND_RED | FOREGROUND_GREEN |
-                                    FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+		    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BACKGROUND_RED |BACKGROUND_GREEN | BACKGROUND_BLUE | BACKGROUND_INTENSITY | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
             printf("%c", cBrett[i][j]);
          }
       }

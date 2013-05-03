@@ -27,6 +27,7 @@ int main(void)
    int iRun = 1;
    int iReturnValue = 0;
    initi();
+   SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BACKGROUND_RED |BACKGROUND_GREEN | BACKGROUND_BLUE | BACKGROUND_INTENSITY | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
 
    while (iRun)
    {
@@ -34,8 +35,31 @@ int main(void)
 	   if (verbindeDB())
 	   {
 		   g_iVerbunden = 1;
+		   iReturnValue = gegnerWaehlen();
+			if (iReturnValue==1)
+			{
+				if (login(1))
+				{
+						iRun = 0;
+				}
+				if(login(2))
+				{
+					iRun = 0;
+				}
+			}
+			else if( iReturnValue==0) 
+			{
+					if (login(1))
+					{
+						iRun = 0;
+					}
+			}
+			else if(iReturnValue==-1) {
+				iRun = 0;
+			}
 	   }
 	   else {
+		    gegnerWaehlen();
 			system("cls");
 			printf("\tEs konnte keine Verbindung zur Datenbank hergestellt ");
 			printf("werden.\n");
@@ -45,31 +69,14 @@ int main(void)
 			strcpy(g_cSpieler2, "Spieler 2");
 			g_iVerbunden = 0;
 	   }
-		iReturnValue = gegnerWaehlen();
-		if (iReturnValue==1)
-		{
-			if (login(1))
-			{
-					iRun = 0;
-			}
-			if(login(2))
-			{
-				iRun = 0;
-			}
-		}
-		else if( iReturnValue==0) 
-		{
-				if (login(1))
-				{
-					iRun = 0;
-				}
-		}
-		else if(iReturnValue==-1) {
-			iRun = 0;
-		}
+		
       if (iRun)
 	  {
          hauptmenue();
+		 if(g_iVerbunden==0)
+		 {
+			 iRun = 0;
+		 }
 	  }
    }
 
@@ -84,84 +91,74 @@ int main(void)
 void drawTop (int iType)
 {
 	system("cls");
-	printf("\nBuild: 5\n");
-	printf("==========================================================");
-	printf("======================");
+	printf("\nBuild: 18\n");
+	printf("=========================================================");
+	printf("======================\n");
 	switch(iType)
 	{
 		//login
 		case 1:
-			printf("               ##     #####   ######     ## ####   ##       ");
-			printf("       ##           ");
-			printf("              ##     ##  ##  ##         ## #####  ##    ####");
-			printf("###########         ");
-			printf("             ##     ##  ##  ## ###     ## ##  ## ##      ###");
-			printf("#############       ");
-			printf("            ##     ##  ##  ##   ##    ## ##   ####      ####");
-			printf("###########         ");
-			printf("           ####### ####    #####     ## ##    ###           ");
-			printf("       ##           ");
+			printf("           ##     #####   ######     ## ####   ##               ##       \n");
+			printf("           ##     ##  ##  ##         ## #####  ##    ###############     \n");
+			printf("           ##     ##  ##  ## ###     ## ##  ## ##    #################   \n");
+			printf("           ##     ##  ##  ##   ##    ## ##   ####    ###############     \n");
+			printf("           ####### ####    #####     ## ##    ###               ##       \n");
 			break;
 			//4gewinnt
 		case 2:
-		    printf("  444        ######   ######### ##     ## ## ###  ## ###  ## ########         ");
-		    printf("  444    44  ##       ###       ##     ## ## #### ## #### ##    ##             ");
-		    printf("  444444444  ## ####  ######### ##  #  ## ## ## #### ## ####    ##              ");
-		    printf("        444  ##    ## ###       ## ### ## ## ##  ### ##  ###    ##               ");
-		    printf("        444    ###### ######### ######### ## ##   ## ##   ##    ##                ");
+		    printf("  444        ######   ######### ##     ## ## ###  ## ###  ## ########    \n");
+		    printf("  444    44  ##       ###       ##     ## ## #### ## #### ##    ##       \n");
+		    printf("  444444444  ## ####  ######### ##  #  ## ## ## #### ## ####    ##       \n");
+		    printf("         44  ##    ## ###       ## ### ## ## ##  ### ##  ###    ##       \n");
+		    printf("         44    ###### ######### ######### ## ##   ## ##   ##    ##       \n");
 			break;
 			//bridges
 		case 3:
-            printf("          #######  #######  ## #####  #######  ###### ######                 ");
-            printf("          ##   ##  ##    ## ## ##  ## ##       ##     ##                      ");
-            printf("          #######  #######  ## ##  ## #######  ###### ######                   ");
-            printf("          ##   ##  ##  ##   ## ##  ## ##       ##         ##                    ");
-            printf("          #######  ##   ##  ## #####  #######  ###### ######                     ");
+            printf("          #######  #######  ## #####  #######  ###### ######             \n");
+            printf("          ##   ##  ##    ## ## ##  ## ##       ##     ##                 \n");
+            printf("          #######  #######  ## ##  ## #######  ###### ######             \n");
+            printf("          ##   ##  ##  ##   ## ##  ## ##       ##         ##             \n");
+            printf("          #######  ##   ##  ## #####  #######  ###### ######             \n");
 			break;
 		case 4:
-            printf("      #######   ##  ##  ###### ######   ## ###  ###### #######  ######       ");
-            printf("      ##    ##  ##  ##  ##     ##   ##  ## ##   ##     ##    ## ##           ");
-            printf("      ##        ######  #####  ##       #####   #####  ## ####  ######       ");
-            printf("      ##    ##  ##  ##  ##     ##   ##  ## ##   ##     ##   ##      ##       ");
-            printf("      #######   ##  ##  ####### ######  ##   ## ###### ##    ## ######       ");
+            printf("      #######   ##  ##  ###### ######   ## ###  ###### #######  ######   \n");
+            printf("      ##    ##  ##  ##  ##     ##   ##  ## ##   ##     ##    ## ##       \n");
+            printf("      ##        ######  #####  ##       #####   #####  ## ####  ######   \n");
+            printf("      ##    ##  ##  ##  ##     ##   ##  ## ##   ##     ##   ##      ##   \n");
+            printf("      #######   ##  ##  ####### ######  ##   ## ###### ##    ## ######   \n");
 			break;
 			//reversi
 		case 5:
-			printf("          #######  #####  ##  ## ##### ######  ######  ##                      ");
-			printf("          ##    ## ##     ##  ## ##    ##   ## ##      ##                      ");
-			printf("          #######  #####  ##  ## ##### ## #### ######  ##                      ");
-			printf("          ##   ##  ##     ##  ## ##    ##  ##      ##  ##                      ");
-			printf("          ##    ## #####  #####  ##### ##   ## ######  ##                      ");
+			printf("          #######  #####  ##  ## ##### ######  ######  ##                \n");
+			printf("          ##    ## ##     ##  ## ##    ##   ## ##      ##                \n");
+			printf("          #######  #####  ##  ## ##### ## #### ######  ##                \n");
+			printf("          ##   ##  ##     ##  ## ##    ##  ##      ##  ##                \n");
+			printf("          ##    ## #####  #####  ##### ##   ## ######  ##                \n");
 			break;
 			//checkers
 			//Hauptmenue
 		case 6:
-			printf("               ###  ###     ###### ###  ##  ##   ##  ##    ####    ##           ");
-			printf("              #### ####    ##     #### ##  ##   ##   ##  ########  ##           ");
-			printf("             ## #### ##   ####   ## ####  ##   ##      ### #### ###             ");
-			printf("            ##  ###  ##  ##     ##  ###  ##   ##         ########               ");
-			printf("           ##   ##   ## ###### ##   ##    ####         ##   ##   ##             ");
+			printf("           ###  ###     ###### ###  ##  ##   ##   ##   #####    ##       \n");
+			printf("           #### ####    ##     #### ##  ##   ##    ## #######  ##        \n");
+			printf("           ## #### ##   ####   ## ####  ##   ##     ### #### ###         \n");
+			printf("           ##  ###  ##  ##     ##  ###  ##   ##       ########           \n");
+			printf("           ##   ##   ## ###### ##   ##    ####      ##   ##   ##         \n");
 			break;
 			//Statistik
 		case 7:
-			printf("         ####### ######## ####### ######### ## ###### ######## ## ##   ##       ");
-			printf("        ##         ##    ##   ##    ##     ## ##        ##    ## ##  ###        ");
-			printf("       ########   ##    #######    ##     ## #######   ##    ## ######          ");
-			printf("            ##   ##    ##   ##    ##     ##      ##   ##    ## ##  ##           ");
-			printf("      #######   ##    ##   ##    ##     ## #######   ##    ## ##   ##           ");
+			printf("      ####### ######## ####### ######### ## ###### ######## ## ##   ##   \n");
+			printf("      ##         ##    ##   ##    ##     ## ##        ##    ## ##  ###   \n");
+			printf("      ########   ##    #######    ##     ## #######   ##    ## ######    \n");
+			printf("           ##    ##    ##   ##    ##     ##      ##   ##    ## ##  ##    \n");
+			printf("      #######    ##    ##   ##    ##     ## #######   ##    ## ##   ##   \n");
 			break;
 			//ranking
 		case 8:
-		   printf("              #######  #####     ###   ## ##   ## ## ");
-		   printf(" ###   ##  #######         ");
-		   printf("             ##    ## ##  ##    ####  ## ##  ### ##  ");
-		   printf("####  ##  ##               ");
-		   printf("            ## ####  #######   ## ## ## ######  ##  #");
-		   printf("# ## ##  ## ####           ");      
-		   printf("           ##   ##  ##    ##  ##  #### ##  ##  ##  ##");
-		   printf("  ####  ##    ##           ");
-		   printf("          ##    ## ##     ## ##   ### ##   ## ##  ## ");
-		   printf("  ###   #######            ");
+		    printf("          #######  #####     ###   ## ##   ## ##  ###   ##  #######      \n");
+		    printf("          ##    ## ##  ##    ####  ## ##  ### ##  ####  ##  ##           \n");
+		    printf("          ######   #######   ## ## ## ######  ##  ## ## ##  ## ####      \n");      
+		    printf("          ##   ##  ##    ##  ##  #### ##  ##  ##  ##  ####  ##    ##     \n");
+		    printf("          ##    ## ##     ## ##   ### ##   ## ##  ##   ###   ######      \n");
 		   break;
 	}
 	printf("==========================================================");
@@ -186,6 +183,8 @@ void enter_pw(char* buffer)
 		c = getch();
 		if(c == '\r')
 			break;
+		//if(c == '\b')
+		//	return 0;
 		buffer[iX] = c;
 		putch('*');
 		iX++;
@@ -272,8 +271,7 @@ void ausgebenText(int iLogout, int iSpielerNr, int iLoginNeu,
    int iUngueltigesZeichen, int iUngueltigerName, int iBereitsEingeloggt)
 {
 
-   SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED |
-      FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+   SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BACKGROUND_RED |BACKGROUND_GREEN | BACKGROUND_BLUE | BACKGROUND_INTENSITY | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
    system("cls");
    // Schreibe Meldung, wenn Spieler ausgeloggt wurden
    if (iLogout)
@@ -366,9 +364,9 @@ int registriereBenutzer(char cSpielerNeu[])
       }
 
       iGueltig = 1;
-      printf("\tPasswort: ");
-      enter_pw(cPasswortNeu);
-      fflush(stdin);
+	  printf("\n\tPasswort: ");
+	  enter_pw(cPasswortNeu);
+	  fflush(stdin);
 
       for (i = 0; i < strlen(cPasswortNeu); i++)
       {
@@ -388,7 +386,7 @@ int registriereBenutzer(char cSpielerNeu[])
    //Einfügen
    if(mysql_query(conn,cStatement))
    {
-      ausgebenFehlermeldung("Fehler1 beim Einfuegen des Benutzers in DB");
+      ausgebenFehlermeldung("\tFehler1 beim Einfuegen des Benutzers in DB");
       return 0;
    }
 
@@ -448,25 +446,25 @@ int benutzerInSpieleEinfuegen(char cName[])
    //Einfügen
    if(mysql_query(conn,cNeuerBenutzerIn4GewinntEinfuegen))
    {
-      ausgebenFehlermeldung("Fehler2 beim Einfuegen in 4Gewinnt");
+      ausgebenFehlermeldung("\tFehler2 beim Einfuegen in 4Gewinnt");
       return 0;
    }
 
    if(mysql_query(conn,cNeuerBenutzerInCheckersEinfuegen))
    {
-      ausgebenFehlermeldung("Fehler3 beim Einfuegen in Checkers");
+      ausgebenFehlermeldung("\tFehler3 beim Einfuegen in Checkers");
       return 0;
    }
 
    if(mysql_query(conn,cNeuerBenutzerInReversiEinfuegen))
    {
-      ausgebenFehlermeldung("Fehler4 beim Einfuegen in Reversi");
+      ausgebenFehlermeldung("\tFehler4 beim Einfuegen in Reversi");
       return 0;
    }
 
    if(mysql_query(conn,cNeuerBenutzerInBridgesEinfuegen))
    {
-      ausgebenFehlermeldung("Fehler5 beim Einfuegen in Bridges");
+      ausgebenFehlermeldung("\tFehler5 beim Einfuegen in Bridges");
       return 0;
    }
 
@@ -495,10 +493,10 @@ int pruefePasswort(char cName[SPIELERLAENGE])
    // 3x falsches Passwort --> Zurück zum Login
    for (iLoginVersuche = 1; iLoginVersuche <= 3; iLoginVersuche++)
    {
-      printf("\tPasswort: ");
-      enter_pw(cPasswort);
-      fflush(stdin);
-
+		printf("\n\tPasswort: ");
+		enter_pw(cPasswort);
+		fflush(stdin);
+	   
       holeSQLPruefePasswortStatement(cStatement, cName, cPasswort);
 
       //Überprüfung, ob Spieler mit Passowrt vorhanden--> Select Befehl 

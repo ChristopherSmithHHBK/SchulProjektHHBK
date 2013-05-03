@@ -49,7 +49,7 @@ int  verbindeDB(void);
 */
 void ausgebenFehlermeldung(char *cText)
 {
-	printf("Fehler: %s\n", cText);
+	printf("\n\tFehler: %s\n", cText);
 	system("pause");
 }
 
@@ -162,7 +162,7 @@ void holeSQLPruefeBenutzerStatement(char cStatement[], char cName[25])
 ===============================================================================
 	Funktion:		holeSQLPruefePasswortStatement()
 	in:				cStatement[], cName[], cPasswort[]
-	out:			-
+	out:			cStatement[]
 	Beschreibung:	SQL-Befehl für Passwortüberprüfung wird zusammengestellt
 ===============================================================================
 */

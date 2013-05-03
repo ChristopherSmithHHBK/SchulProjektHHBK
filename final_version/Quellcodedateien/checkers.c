@@ -1,11 +1,12 @@
 /*
-============================================================================
-Autor		: Hendrik Haase, Howik Babachanjan
-Klasse		: FA1
-Dateiname	: checkers.c
-Datum		: 03.05.2013
-Beschreibung: 
-================================================================================
+==============================================================================
+Author: Sebastian Weis
+Firma: TARGO IT Consulting GmbH
+PGM: checkers.c
+Version: 1.0
+Comment: Das Spiel "Checkers".
+         <<<For internal use only>>>
+==============================================================================
 */
 /*
 ==============================================================================
@@ -347,9 +348,7 @@ void schreibe(void)
             /*
             Alle Felder und die Legenden sollen normal dargestellt werden.
             */
-            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 
-               FOREGROUND_BLUE | FOREGROUND_RED | 
-               FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+		    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BACKGROUND_RED |BACKGROUND_GREEN | BACKGROUND_BLUE | BACKGROUND_INTENSITY | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
             printf("%c", g_cAusgabe[i][h]);
          }
          else
@@ -366,9 +365,7 @@ void schreibe(void)
                /*
                Ausgabe der Konsole wird zurück gesetzt
                */
-               SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 
-                  FOREGROUND_BLUE | FOREGROUND_RED | 
-                  FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+			   SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BACKGROUND_RED |BACKGROUND_GREEN | BACKGROUND_BLUE | BACKGROUND_INTENSITY | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
             }
             if(g_cAusgabe[i][h] == 'Q' && i != 0)
             {
@@ -376,16 +373,12 @@ void schreibe(void)
                Alle damen des ersten Spielers 
                sollen schwarz/blau dargestellt werden
                */
-               SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 
-                  BACKGROUND_BLUE | FOREGROUND_RED | 
-                  FOREGROUND_GREEN | FOREGROUND_BLUE);
+			   SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BACKGROUND_RED |BACKGROUND_GREEN | BACKGROUND_BLUE | BACKGROUND_INTENSITY | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
                printf("%c", g_cAusgabe[i][h]);
                /*
                Ausgabe der Konsole wird zurück gesetzt
                */
-               SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 
-                  FOREGROUND_BLUE | FOREGROUND_RED | 
-                  FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+			   SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BACKGROUND_RED |BACKGROUND_GREEN | BACKGROUND_BLUE | BACKGROUND_INTENSITY | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
             }
             if(g_cAusgabe[i][h] == 'C' && i != 0)
             {
@@ -399,9 +392,7 @@ void schreibe(void)
                /*
                Ausgabe der Konsole wird zurück gesetzt
                */
-               SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 
-                  FOREGROUND_BLUE | FOREGROUND_RED | 
-                  FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+			   SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BACKGROUND_RED |BACKGROUND_GREEN | BACKGROUND_BLUE | BACKGROUND_INTENSITY | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
             }
             if(g_cAusgabe[i][h] == 'K' && i != 0)
             {
@@ -415,9 +406,7 @@ void schreibe(void)
                /*
                Ausgabe der Konsole wird zurück gesetzt
                */
-               SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 
-                  FOREGROUND_BLUE | FOREGROUND_RED | 
-                  FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+			   SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BACKGROUND_RED |BACKGROUND_GREEN | BACKGROUND_BLUE | BACKGROUND_INTENSITY | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
             }   
          }
       }
